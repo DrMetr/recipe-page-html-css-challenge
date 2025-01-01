@@ -5,13 +5,245 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
   
   <title>Frontend Mentor | Recipe page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
+  
+    <style>
+      
+      @property --bgcolor {
+          syntax: "<color>";
+          inherits: false;
+          initial-value: hsl(30, 54%, 90%);
+      }
+      
+      @property --h1color {
+          syntax: "<color>";
+          inherits: false;
+          initial-value: hsl(24, 5%, 18%);
+      }
+      @property --h2td2color {
+          syntax: "<color>";
+          inherits: false;
+          initial-value: hsl(14, 45%, 36%);
+      }
+      
+      @property --h3color {
+          syntax: "<color>";
+          inherits: false;
+          initial-value: hsl(332, 51%, 32%);
+      }
+      
+      @property --preptimecolor {
+          syntax: "<color>";
+          inherits: false;
+          initial-value: hsl(330, 100%, 98%);
+      }
+      
+      @property --hrcolor {
+          syntax: "<color>";
+          inherits: false;
+          initial-value: hsl(30, 18%, 87%);
+      }
+      
+      @property --textcolor {
+          syntax: "<color>";
+          inherits: false;
+          initial-value: hsl(30, 10%, 34%);
+      }
+      
+      body {
+          background-color: var(--bgcolor);
+      } 
+        
+      p, td, ol li, h3, ul li{
+          color: var(--textcolor);
+          font-family: "Outfit", sans-serif;
+      }
+        
+    h1, h2, p, ul {
+            margin-left: 45px;
+        }
+      
+      h1 {
+          color: var(--h1color);
+      }
+      
+      h2 {
+          color: var(--h2td2color);
+      }
+      
+      h3 {
+          color: var(--h3color);
+      }
+      
+      h1, h2 {
+            font-family: "Young Serif", serif;
+        }
+        
+      ol { 
+          list-style-type: none; 
+	      counter-reset: num;
+	      margin: 0 0 0 75px;
+	      padding: 15px 0 5px 0;
+	   }
+        
+      ol li {
+	      position: relative;	
+	      margin: 0 0 0 0;
+          padding: 0 0 10px 0;
+       }
+       ol li::before {
+	      content: counter(num) '.'; 
+	      counter-increment: num;
+	      display: inline-block;	
+	      position: relative;
+	      top: 0px;
+          left: -30px;
+	      width: 20px;    
+	      text-align: left;
+          font-weight: bold;
+          color: var(--h2td2color);
+       }
+        
+      img {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 20px;
+          width: 90%;
+          left: 0px;
+          height: auto;
+          border: border: 5px solid rgba(0, 0, 0, 0);
+          border-radius: 10px;
+        }
+        ul li span {
+            position: relative;
+            left: 20px;
+        }
+        h3 + ul li::marker {
+            color: var(--h3color);
+        }
+        
+        h2 + ul li::marker {
+            color: var(--h2td2color);
+        }
+        hr {
+          color: var(--hrcolor);
+        }
+        
+        table, td, th {
+          border-bottom: 1px solid var(--hrcolor);
+          border-left: none;
+        }
+        
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            width: 90%;
+            border-collapse: collapse;
+        }
+        td {
+          text-align: left;
+          padding: 15px;
+          padding-left: 25px;
+          width: 50%;
+        }
+        
+        table:last-child {
+            border: none;
+        }
+        
+    .td2 { color: var(--h2td2color); font-weight: bold;}
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    .preptime { background-color: var(--preptimecolor); border: 5px solid rgba(0, 0, 0, 0); margin: auto; width: 90%; border-radius: 10px;}
+    .main {background-color: white; border: 5px solid rgba(0, 0, 0, 0); margin: auto; width: 50%; border-radius: 20px; padding: 15px; text-align: left;}
+        
+    @media screen and (max-width: 375px) {
+            div.main {
+                width: 100%;
+            }
+    }
+    </style>
 </head>
+    
 <body>
+<div class="main">
+    <picture>
+    <img src="C:\Users\Metronome\Desktop\recipe-page-main\assets\images\image-omelette.jpeg" alt="Photo of an omelette";>
+    </picture>
+    <h1>Simple Omelette Recipe</h1>
+
+  <p>An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked 
+      to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
+    <div class="preptime">
+    <h3>Preparation time</h3>
+    <ul>
+  <li><span><b>Total:</b> Approximately 10 minutes</span></li>
+  <li><span><b>Preparation:</b> 5 minutes</span></li>
+  <li><span><b>Cooking:</b> 5 minutes</span></li>
+    </ul>
+    </div>
+
+    <h2>Ingredients</h2>
+<ul>
+  <li><span>2-3 large eggs</span></li>
+  <li><span>Salt, to taste</span></li>
+  <li><span>Pepper, to taste</span></li>
+  <li><span>1 tablespoon of butter or oil</span></li>
+  <li><span>Optional fillings: cheese, diced vegetables, cooked meats, herbs</span></li>
+</ul>
+    <hr>
+    <h2>Instructions</h2>
+<ol>
+  <li><b>Beat the eggs:</b> In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
+  You can add a tablespoon of water or milk for a fluffier texture.</li>
+
+  <li><b>Heat the pan:</b> Place a non-stick frying pan over medium heat and add butter or oil.</li>
+
+  <li><b>Cook the omelette:</b> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure
+    the eggs evenly coat the surface.</li>
+
+  <li><b>Add fillings (optional):</b> When the eggs begin to set at the edges but are still slightly runny in the 
+  middle, sprinkle your chosen fillings over one half of the omelette.</li>
+
+  <li><b>Fold and serve:</b> As the omelette continues to cook, carefully lift one edge and fold it over the 
+  fillings. Let it cook for another minute, then slide it onto a plate.</li>
+
+  <li><b>Enjoy:</b> Serve hot, with additional salt and pepper if needed.</li>
+</ol>
+<hr>
+    <h2>Nutrition</h2>
+
+    <p>The table below shows nutritional values per serving without the additional fillings.</p>
+   <table>
+       <tr>
+           <td>Calories</td>
+           <td class="td2">277kcal</td>
+       </tr>
+       <tr>
+            <td>Carbs</td>
+            <td class="td2"> 0g</td>
+       </tr>
+       <tr>
+            <td>Protein</td>
+            <td class="td2">20g</td>
+       </tr>
+       <tr >
+            <td style="border: none";>Fat</td>
+            <td class="td2" style="border: none";>22g</td>
+       </tr>
+    </table>
+</div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">DrMetr</a>.
+  </div>
+</body>
+</html>
